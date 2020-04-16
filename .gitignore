@@ -2,4 +2,4 @@ Migrations/
 .vscode/
 bin/
 obj/
-appsetting.json
+appsettings.json
