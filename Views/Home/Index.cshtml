@@ -13,16 +13,21 @@
             <th>Lizard Type</th>
             <th>Pirate Role</th>
             <th>Joined Crew</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach( LizardPirate lp in Model )
         {
             <tr>
-                <td>@lp.Name</td>
+                <td><a asp-action="Show" asp-route-LPId="@lp.LizardPirateId" >@lp.Name</a></td>
                 <td>@lp.LizardType</td>
                 <td>@lp.PirateRoll</td>
                 <td>@lp.CreatedAt.ToShortDateString() || @lp.CreatedAt.ToShortTimeString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-LPId="@lp.LizardPirateId" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/delete/@lp.LizardPirateId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

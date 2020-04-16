@@ -7,10 +7,14 @@ namespace LizardPirates.Models
     {
         [Key]
         public int LizardPirateId {  get; set;}
+
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string LizardType { get; set; }
 
+        [Required]
         public string PirateRoll { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
