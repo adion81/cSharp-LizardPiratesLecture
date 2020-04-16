@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<LizardPirate>
+
+<h1>Lizard Pirates</h1>
+<a href="/add" class="btn btn-primary">Add Lizard Pirate</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Lizard Type</th>
+            <th>Pirate Role</th>
+            <th>Joined Crew</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach( LizardPirate lp in Model )
+        {
+            <tr>
+                <td>@lp.Name</td>
+                <td>@lp.LizardType</td>
+                <td>@lp.PirateRoll</td>
+                <td>@lp.CreatedAt.ToShortDateString() || @lp.CreatedAt.ToShortTimeString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
